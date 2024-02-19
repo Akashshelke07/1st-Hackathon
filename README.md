@@ -1,2 +1,2 @@
 # 1st-Hackathon
-Introducing Smart Waste Management System
+Team Name:- Tech Solution
