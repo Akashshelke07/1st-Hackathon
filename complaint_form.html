@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management Complaint Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: rgb(124, 164, 43);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #d1a2a2;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff006a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #377d8b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Waste Management Complaint Box</h2>
+
+    <form id="complaintForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="type">Type of Waste Management:</label>
+        <select id="type" name="type">
+            <option value="Garbage Collection">Garbage Collection</option>
+            <option value="Recycling">Recycling</option>
+            <option value="Composting">Composting</option>
+            <option value="Hazardous Waste Disposal">Hazardous Waste Disposal</option>
+        </select>
+
+        <label for="complaint">Complaint:</label>
+        <textarea id="complaint" name="complaint" required></textarea>
+
+        <button type="submit">Submit Complaint</button>
+    </form>
+
+    <script>
+        document.getElementById('complaintForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+
+            var jsonObject = {};
+            formData.forEach(function (value, key) {
+                jsonObject[key] = value;
+            });
+
+
+            console.log(jsonObject);
+
+            alert('Thank you for your complaint. We will address the issue as soon as possible.');
+
+            this.reset();
+        });
+    </script>
+
+</body>
+
+</html>

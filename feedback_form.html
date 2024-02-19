@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Feedback Form</h2>
+
+    <form id="feedbackForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <script>
+
+        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+
+            var name = document.getElementById('name').value;
+            var feedback = document.getElementById('feedback').value;
+
+
+            var feedbackObj = {
+                name: name,
+                feedback: feedback
+            };
+
+
+            if (typeof (Storage) !== "undefined") {
+
+                var existingFeedback = JSON.parse(localStorage.getItem('feedback')) || [];
+
+
+                existingFeedback.push(feedbackObj);
+
+
+                localStorage.setItem('feedback', JSON.stringify(existingFeedback));
+
+
+                alert('Thank you for your feedback!');
+
+                document.getElementById('feedbackForm').reset();
+            } else {
+                alert('Local storage is not supported in your browser. Feedback cannot be saved.');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
