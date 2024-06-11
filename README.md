@@ -1,13 +1,6 @@
 # Introducing Smart Waste Management System
 
-Tech Solution is a team of dedicated professionals committed to providing innovative solutions to meet the evolving needs of our clients. Our mission is to deliver exceptional services and products that enhance the user experience and drive success.
-
-
-## Demo
-
-"Here is the demo of our project on smart waste management system."
-
-https://smartmanagement.netlify.app
+Tech Solution is a team of dedicated professionals committed to providing innovative solutions to meet the evolving needs of our clients. Our mission is to deliver exceptional services and products that enhance the user experience and drive success. 
 
 # Live Tracking Acknowledgments using Google Maps API with JavaScript
 
